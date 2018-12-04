@@ -1,0 +1,16 @@
+@charset "utf-8";
+
+#topo {
+	float: none;
+	display: block;
+	margin: auto;
+}
+
+
+
+#enviar {
+	font-family: sans-serif;
+	color: #FFFFFF;
+	text-decoration: none;
+	text-align: center;
+}
