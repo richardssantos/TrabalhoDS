@@ -64,3 +64,23 @@ CREATE TABLE administrador(
 INSERT INTO administrador (siape, nome, email, tel, senha) 
 VALUES (1111111111,'Administrador Tester','tester@gmail.com',190,'0000');
 
+
+
+CREATE TABLE pasta(
+  id_documento int(11) NOT NULL auto_increment,
+  nome_documento varchar(50) character set utf8 collate utf8_unicode_ci NOT NULL,
+  descricao_documento varchar(100) character set utf8 collate utf8_unicode_ci NOT NULL,
+  tamanho_documento mediumint(9) NOT NULL,
+  dados_documento mediumblob NOT NULL,
+  PRIMARY KEY  (id_documento)
+);
+
+CREATE TABLE pastaAluno(
+matricula			int(10)		not null, 
+id_documento                 int(11)          NOT NULL,
+PRIMARY KEY  (id_documento,matricula) 
+
+);
+ALTER TABLE pastaAluno  add FOREIGN KEY(matricula) REFERENCES aluno(matricula); 
+ 
+ALTER TABLE pastaAluno  add FOREIGN KEY(id_documento) REFERENCES pasta(id_documento); 
