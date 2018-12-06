@@ -1,0 +1,48 @@
+<div class="form-group">
+					<label class="col-sm-3 control-label" for="curso">Atividade</label>
+						<div class="col-sm-3">
+							<select class="form-control" name="classeDefault">
+							<option>Escolha uma opção</option>
+							<option value="C">1</option>
+							<option value="E">2</option>
+							<option value="E">2</option>
+						</select>
+						</div>
+					
+					<label class="col-sm-1 control-label" for="curso"></label>
+						<div class="col-sm-3">
+							<input class="form-control " type="text" name="unidade" placeholder="Unidade">
+						</div>
+				</div>
+				
+				
+				<div class="form-group">
+					<label class="col-sm-3 control-label" for="curso">Data de Inicio</label>
+						<div class="col-sm-3">
+							<input class="form-control " type="date" name="dataFinal">
+						</div>
+					
+					<label class="col-sm-1 control-label" for="curso">Data de Fim</label>
+						<div class="col-sm-3">
+							<input class="form-control " type="date" name="dataFinal">
+						</div>
+				</div>
+				
+				<div class="form-group">
+						<label class="col-sm-3 control-label" for="curso">Quantidade de Horas</label>
+						<div class="col-sm-7">
+							<input class="form-control " type="text" name="default" placeholder="Quantidade de horas">
+						</div>
+				</div>
+				<p> </p>
+				<div class="form-group">
+					<label class="col-sm-3 control-label" for="curso">Selecione seu arquivo</label>
+					<div class="col-sm-2 col-sm-offset-0">
+						<input name="arquivo" type="file">
+					</div>	
+				</div>
+				<div class="form-group">
+					<div class="col-sm-7 col-sm-offset-3">
+						<button type="submit" value="enviar" class="btn btn-primary btn-block">SUBMETER ATIVIDADE</button>
+					</div>	
+				</div>

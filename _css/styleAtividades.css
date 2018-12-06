@@ -1,0 +1,25 @@
+.cabecalho {
+	height: 100px;
+}
+
+.nome {
+	margin-top: 8%;
+	margin-left: 20%;
+	text-align: center;
+}
+
+
+hr.linha {
+	border-color:#AAA8A8;
+	border-bottom-width: thin;
+	width:100%;  
+}
+
+.meio{
+	background: red;
+}
+
+.carregando {
+	color: #ff0000;
+	display: none;
+}
