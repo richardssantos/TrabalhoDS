@@ -128,19 +128,51 @@ FOREIGN KEY(matricula) REFERENCES aluno(matricula),
 FOREIGN KEY(id_documento) REFERENCES pasta(id_documento)
 );
 
-CREATE TABLE `categoriaatividade` (
-  `idCategoria` int(1) NOT NULL,
-  `classe` varchar(10) NOT NULL,
-  PRIMARY KEY (`idCategoria`)
+CREATE TABLE categoriaatividade (
+  idCategoria int(1) NOT NULL,
+  classe varchar(10) NOT NULL,
+  PRIMARY KEY (idCategoria)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+//REVER ISTO!!!!!!!!!!!!!!!!!!!!!!!
+CREATE TABLE atividades (
+  id int(11) NOT NULL,
+  atividade varchar(120) NOT NULL,
+  unidade varchar(10) NOT NULL,
+  horas int(3) NOT NULL,
+  maxHoras int(3) NOT NULL,
+  idCategoria int(1) NOT NULL,
+  PRIMARY KEY (id)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-CREATE TABLE `atividades` (
-  `id` int(11) NOT NULL,
-  `atividade` varchar(120) NOT NULL,
-  `unidade` varchar(10) NOT NULL,
-  `horas` int(3) NOT NULL,
-  `maxHoras` int(3) NOT NULL,
-  `idCategoria` int(1) NOT NULL,
-  KEY `fk_PesCateg` (`idCategoria`),
-  CONSTRAINT `fk_PesCateg` FOREIGN KEY (`idCategoria`) REFERENCES `categoriaatividade` (`idCategoria`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+INSERT INTO atividades (id,atividade,unidade,horas,maxHoras,idCategoria) 
+VALUES (1,'Monitorias','Semestre',51,102,1);
+INSERT INTO atividades (id,atividade,unidade,horas,maxHoras,idCategoria) 
+VALUES (2,'Semana AcadÃªmica do curso','Horas',34,68,1);
+INSERT INTO atividades (id,atividade,unidade,horas,maxHoras,idCategoria) 
+VALUES (3,'Bolsista / VoluntÃ¡rio em Projeto de ENSINO','Semestre',51,153,1);
+INSERT INTO atividades (id,atividade,unidade,horas,maxHoras,idCategoria) 
+VALUES (4,'ParticipaÃ§Ã£o em Cursos e Escolas','Horas',51,102,1);
+INSERT INTO atividades (id,atividade,unidade,horas,maxHoras,idCategoria) 
+VALUES (5,'RepresentaÃ§Ã£o Estudantil','Semestre',51,102,1);
+INSERT INTO atividades (id,atividade,unidade,horas,maxHoras,idCategoria) 
+VALUES (6,'CertificaÃ§Ãµes Profissionais','Horas',51,102,1);
+INSERT INTO atividades (id,atividade,unidade,horas,maxHoras,idCategoria) 
+VALUES (7,'Bolsista / VoluntÃ¡rio em Projeto de EXTENSÃƒO','Semestre',51,153,2);
+INSERT INTO atividades (id,atividade,unidade,horas,maxHoras,idCategoria) 
+VALUES (8,'ParticipaÃ§Ã£o em Atividades de ExtensÃ£o (OrganizaÃ§Ã£o de eventos)','Horas',34,153,2);
+INSERT INTO atividades (id,atividade,unidade,horas,maxHoras,idCategoria) 
+VALUES (9,'Bolsista / VoluntÃ¡rio em Projeto de PESQUISA','Semestre',51,153,3);
+INSERT INTO atividades (id,atividade,unidade,horas,maxHoras,idCategoria) 
+VALUES (10,'ParticipaÃ§Ã£o em Eventos CientÃ­ficos Regionais e Locais','Unidade',17,51,3);
+INSERT INTO atividades (id,atividade,unidade,horas,maxHoras,idCategoria) 
+VALUES (11,'ParticipaÃ§Ã£o em Eventos CientÃ­ficos Nacionais','Unidade',34,68,3);
+INSERT INTO atividades (id,atividade,unidade,horas,maxHoras,idCategoria) 
+VALUES (12,'ParticipaÃ§Ã£o em Eventos CientÃ­ficos Internacionais','Unidade',34,68,3);
+INSERT INTO atividades (id,atividade,unidade,horas,maxHoras,idCategoria) 
+VALUES (13,'PublicaÃ§Ã£o em Eventos CientÃ­ficos Regionais e Locais','Unidade',34,68,3);
+INSERT INTO atividades (id,atividade,unidade,horas,maxHoras,idCategoria) 
+VALUES (14,'PublicaÃ§Ã£o em Eventos CientÃ­ficos Nacionais','Unidade',51,102,3);
+INSERT INTO atividades (id,atividade,unidade,horas,maxHoras,idCategoria) 
+VALUES (15,'PublicaÃ§Ã£o em Eventos CientÃ­ficos Internacionais','Unidade',68,136,3);
+INSERT INTO atividades (id,atividade,unidade,horas,maxHoras,idCategoria) 
+VALUES (16,'ObtenÃ§Ã£o de PrÃªmios e DistinÃ§Ãµes','Unidade',68,136,3);
