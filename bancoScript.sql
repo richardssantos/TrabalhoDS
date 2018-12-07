@@ -15,7 +15,7 @@ INSERT INTO curso (idCurso, nomeCurso) VALUES (2,'Engenharia da Computação');
 
 CREATE TABLE curriculo
 (
-	nomeCurriculo 		int(4)	not null, 
+	nomeCurriculo		int(4)  not null, 
 	minEns				int(4)	not null, 
 	minPesq				int(4)	not null, 
 	minExt				int(4)	not null, 
@@ -24,8 +24,10 @@ CREATE TABLE curriculo
 	PRIMARY KEY (nomeCurriculo)
 );
 
-INSERT INTO curriculo (nomeCurriculo,minEns, minPesq, minExt, minLivre, minTotalCompl) VALUES (2013,120,120,120,120,320);
-INSERT INTO curriculo (nomeCurriculo,minEns, minPesq, minExt, minLivre, minTotalCompl) VALUES (2015,120,120,120,120,320);
+INSERT INTO curriculo (nomeCurriculo,minEns, minPesq, minExt, minLivre, minTotalCompl) 
+VALUES 
+(2013,120,120,120,120,320),
+(2015,120,120,120,120,320);
 
 CREATE TABLE coordenador (
 Siape				varchar(15)	not null, 
@@ -34,9 +36,8 @@ email				varchar(30)	not null,
 tel					varchar(15), 
 senha				varchar(10)	not null, 
 registroAceito		bit(1)		not null default 0, 
-idCurso				varchar(15)	not null, 
-PRIMARY KEY (Siape),
-FOREIGN KEY (idCurso) REFERENCES CURSO (idCurso)
+idCurso				int(1) not null,
+FOREIGN KEY (idCurso) REFERENCES curso (idCurso)
 );
 
 CREATE TABLE administrador(
@@ -66,10 +67,10 @@ CREATE TABLE aluno (
 	URL_RelatorioFinal	varchar(50), 
 	idCurso				int(1) 		not null,
 	idCurriculo			int(4) 		not null,
-    	nivel				bit(1) not null default 1,
+	nivel				bit(1) not null default 1,
 	PRIMARY KEY (matricula),
-	FOREIGN KEY (idCurso) REFERENCES CURSO (idCurso), 
-	FOREIGN KEY (idCurriculo) REFERENCES CURRICULO (idCurriculo)
+	FOREIGN KEY (idCurso) REFERENCES curso (idCurso), 
+	FOREIGN KEY (idCurriculo) REFERENCES curriculo (nomeCurriculo)
 );
 
 INSERT INTO aluno (matricula, nome, email, tel, senha, registroAceito,provavelFormatura,URL_Dir,URL_RelatorioFinal,idCurso,idCurriculo) 
@@ -90,7 +91,7 @@ CREATE TABLE constituido_por (
 	atividade			varchar(30) 	not null, 
 	curriculo			varchar(15)	not null, 
 	nomeAtividade		varchar(30)	not null, 
-	nomeCurriculo 		varchar(15)	not null, 
+	nomeCurriculo 		int(4)	not null, 
 	PRIMARY KEY (atividade,curriculo),
 	FOREIGN KEY (nomeAtividade) REFERENCES ATIVIDADE (nomeAtividade),
 	FOREIGN KEY (nomeCurriculo) REFERENCES CURRICULO (nomeCurriculo)
@@ -103,12 +104,12 @@ CREATE TABLE registro_atividade (
 	administrador		varchar(15)	not null,
 	valorEmHoras		int		not null,
 	nomeAtividade		varchar(30)	not null, 
-	matricula			varchar(15)	not null, 
-	Siape				varchar(15)	not null, 
+	matricula			int(10)	not null, 
+	Siape				int(15)	not null, 
 	PRIMARY KEY (idSubmissao),
-	FOREIGN KEY (nomeAtividade) REFERENCES ATIVIDADE (nomeAtividade),
-	FOREIGN KEY (matricula) REFERENCES ALUNO (matricula),
-	FOREIGN KEY (Siape) REFERENCES ADMINISTRADOR (Siape)
+	FOREIGN KEY (nomeAtividade) REFERENCES atividade (nomeAtividade),
+	FOREIGN KEY (matricula) REFERENCES aluno (matricula),
+	FOREIGN KEY (Siape) REFERENCES administrador (Siape)
 );
 
 CREATE TABLE pasta(
@@ -133,7 +134,7 @@ CREATE TABLE categoriaatividade (
   classe varchar(10) NOT NULL,
   PRIMARY KEY (idCategoria)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-//REVER ISTO!!!!!!!!!!!!!!!!!!!!!!!
+-- REVER ISTO!!!!!!!!!!!!!!!!!!!!!!!
 CREATE TABLE atividades (
   id int(11) NOT NULL,
   atividade varchar(120) NOT NULL,
