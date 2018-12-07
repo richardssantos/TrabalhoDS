@@ -128,3 +128,19 @@ FOREIGN KEY(matricula) REFERENCES aluno(matricula),
 FOREIGN KEY(id_documento) REFERENCES pasta(id_documento)
 );
 
+CREATE TABLE `categoriaatividade` (
+  `idCategoria` int(1) NOT NULL,
+  `classe` varchar(10) NOT NULL,
+  PRIMARY KEY (`idCategoria`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+CREATE TABLE `atividades` (
+  `id` int(11) NOT NULL,
+  `atividade` varchar(120) NOT NULL,
+  `unidade` varchar(10) NOT NULL,
+  `horas` int(3) NOT NULL,
+  `maxHoras` int(3) NOT NULL,
+  `idCategoria` int(1) NOT NULL,
+  KEY `fk_PesCateg` (`idCategoria`),
+  CONSTRAINT `fk_PesCateg` FOREIGN KEY (`idCategoria`) REFERENCES `categoriaatividade` (`idCategoria`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
