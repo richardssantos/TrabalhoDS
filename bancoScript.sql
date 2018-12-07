@@ -6,7 +6,7 @@ CREATE TABLE curso
 (
 	idCurso				int(1)	not null, 
 	nomeCurso			varchar(25)	not null,
-PRIMARY KEY (idCurso)
+	PRIMARY KEY (idCurso)
 );
 
 INSERT INTO curso (idCurso, nomeCurso) VALUES (1,'Ciência da Computação');
@@ -28,15 +28,15 @@ INSERT INTO curriculo (nomeCurriculo,minEns, minPesq, minExt, minLivre, minTotal
 INSERT INTO curriculo (nomeCurriculo,minEns, minPesq, minExt, minLivre, minTotalCompl) VALUES (2015,120,120,120,120,320);
 
 CREATE TABLE coordenador (
-Siape				varchar(15)	not null, 
-nome				varchar(30)	not null, 
-email				varchar(30)	not null, 
-tel					varchar(15), 
-senha				varchar(10)	not null, 
-registroAceito		bit(1)		not null default 0, 
-idCurso				varchar(15)	not null, 
-PRIMARY KEY (Siape),
-FOREIGN KEY (idCurso) REFERENCES CURSO (idCurso)
+	Siape				varchar(15)	not null, 
+	nome				varchar(30)	not null, 
+	email				varchar(30)	not null, 
+	tel					varchar(15), 
+	senha				varchar(10)	not null, 
+	registroAceito		bit(1)		not null default 0, 
+	idCurso				varchar(15)	not null, 
+	PRIMARY KEY (Siape),
+	FOREIGN KEY (idCurso) REFERENCES curso (idCurso)
 );
 
 CREATE TABLE administrador(
@@ -133,7 +133,7 @@ CREATE TABLE categoriaatividade (
   classe varchar(10) NOT NULL,
   PRIMARY KEY (idCategoria)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-//REVER ISTO!!!!!!!!!!!!!!!!!!!!!!!
+
 CREATE TABLE atividades (
   id int(11) NOT NULL,
   atividade varchar(120) NOT NULL,
