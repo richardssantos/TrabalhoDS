@@ -124,8 +124,7 @@ CREATE TABLE pastaAluno(
 matricula			int(10)		not null, 
 id_documento                 int(11)          NOT NULL,
 PRIMARY KEY  (id_documento,matricula) 
-
+FOREIGN KEY(matricula) REFERENCES aluno(matricula); 
+FOREIGN KEY(id_documento) REFERENCES pasta(id_documento); 
 );
-ALTER TABLE pastaAluno  add FOREIGN KEY(matricula) REFERENCES aluno(matricula); 
- 
-ALTER TABLE pastaAluno  add FOREIGN KEY(id_documento) REFERENCES pasta(id_documento); 
+
