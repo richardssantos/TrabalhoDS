@@ -80,17 +80,17 @@ mysqli_close($conectando);
 					<a class="nav-link negrito" href="#">Buscar</a>
 				</li>
 
-			</ul>		
+			</ul>
+			
 			<div class="row">
 				<div class="col-sm-12"><h1></h1></div>
 			</div>
 			
 		</div>	 <!-- FIM MENU -->
-	
 		<span id="conteudo" class="col-sm-10 col-sm-offset-1"></span>
 			<script>
 				$(document).ready(function () {
-					$.post('novoAluno.php', function(retorna){
+					$.post('listaAlunos.php', function(retorna){
 					//Subtitui o valor no seletor id="conteudo"
 					$("#conteudo").html(retorna);
 				});

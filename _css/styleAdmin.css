@@ -1,20 +1,24 @@
 
 #menu {
-	background: #EEEEEE;
-	border-color: #EEEEEE;
+	background:#FFFFFF;;
+	border-color: #FFFFFF;;
+	color: #FFFFFF;
 }
 
 
 a {
-	color: black;
-	background-color: #B5B5B5;
+	text-decoration: none;
+}
+
+ul {
+	color: #FFFFFF;
 }
 
 /* quando passar o mouse muda de cor*/
 #menu a:hover {
 	text-decoration: none; 
 	background-color:#404549;
-	color: black;
+	color: #FFFFFF;
 }
 
 h1 {
@@ -22,8 +26,10 @@ h1 {
 }
 
 .negrito {
+	color: #FFFFFF;
 	text-transform: uppercase;
 	font-weight: bold;
-	background-color: deepskyblue;
+	background-color: #007BFF;
+	font-size: 14px;
 }
 
