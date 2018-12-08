@@ -1,0 +1,29 @@
+
+#menu {
+	background: #EEEEEE;
+	border-color: #EEEEEE;
+}
+
+
+a {
+	color: black;
+	background-color: #B5B5B5;
+}
+
+/* quando passar o mouse muda de cor*/
+#menu a:hover {
+	text-decoration: none; 
+	background-color:#404549;
+	color: black;
+}
+
+h1 {
+	background: red;
+}
+
+.negrito {
+	text-transform: uppercase;
+	font-weight: bold;
+	background-color: deepskyblue;
+}
+

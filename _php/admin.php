@@ -29,6 +29,7 @@ mysqli_close($conectando);
 	
 
 		<link href="../_css/styleUsuario.css" rel="stylesheet">
+		<link href="../_css/styleAdmin.css" rel="stylesheet">
 		<link href="../bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
 		<title>Página Administrador</title>
 	</head>
@@ -54,7 +55,23 @@ mysqli_close($conectando);
 			</div>
 		</div>
 		<hr>
-	</div>
+		
+		<!-- MENU -->
+		<!-- MENU FUNCIONANDO TEM QUE AJUSTAR OS LINKS-->
+		<nav id="menu" class="navbar">
+			<div class="container-fluid col-sm-offset-4">
+				<ul class="nav navbar-nav negrito">
+					<li>
+						<a href="novos.php">Novos Registros</a>
+					</li>
+					<li class="active"><a href="#">Alunos</a></li>
+					<li class="active"><a href="#">Atividades</a></li>
+				</ul>
+			</div>
+		</nav>
+		<!-- FIM MENU -->
+		
+	</div> <!-- FIM CONTAINER -->
 	
 </body>
 </html>
