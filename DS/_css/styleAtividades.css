@@ -18,3 +18,8 @@ hr.linha {
 .meio{
 	background: red;
 }
+
+.carregando {
+	color: #ff0000;
+	display: none;
+}

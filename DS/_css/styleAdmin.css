@@ -1,0 +1,35 @@
+
+#menu {
+	background:#FFFFFF;;
+	border-color: #FFFFFF;;
+	color: #FFFFFF;
+}
+
+
+a {
+	text-decoration: none;
+}
+
+ul {
+	color: #FFFFFF;
+}
+
+/* quando passar o mouse muda de cor*/
+#menu a:hover {
+	text-decoration: none; 
+	background-color:#404549;
+	color: #FFFFFF;
+}
+
+h1 {
+	background: red;
+}
+
+.negrito {
+	color: #FFFFFF;
+	text-transform: uppercase;
+	font-weight: bold;
+	background-color: #007BFF;
+	font-size: 14px;
+}
+
