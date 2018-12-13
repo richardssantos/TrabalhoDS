@@ -16,7 +16,6 @@ $sql = "SELECT * FROM aluno WHERE matricula = '$id' ";
 $resultado = mysqli_query($conectando,$sql);
 $dados = mysqli_fetch_array($resultado);
 
-
 ?>
 
 
@@ -45,7 +44,7 @@ $dados = mysqli_fetch_array($resultado);
 			</div>
 		</div><hr class="linha">
 		
-	<form method="post" action="processaUpload.php" class="form-horizontal" enctype="multipart/form-data">
+	<form method="post" action="processsaUpload.php" class="form-horizontal" enctype="multipart/form-data">
 
 		<div class="form-group">
 			<label class="col-sm-3 control-label" for="curso">Tipo de Atividade</label>
@@ -53,7 +52,6 @@ $dados = mysqli_fetch_array($resultado);
 				<select name="classeDefault" id="classeDefault" class="form-control" >
 					<option value="">Escolha uma opção</option>
 					<?php 
-						$unidade = "";
 						$categoria_post = "SELECT * FROM categoriaatividade ORDER BY classe";
 						$categoria_post = mysqli_query($conectando,$categoria_post);
 						while($row_cat_post = mysqli_fetch_assoc($categoria_post) ) 
@@ -65,28 +63,20 @@ $dados = mysqli_fetch_array($resultado);
 				</div>
 		</div>
 
+
 		<div class="form-group">
 			<label class="col-sm-3 control-label" for="curso">Atividade</label>
 			<div class="col-sm-3">
 				<span class="carregando">Aguarde, carregando...</span>
 				<select name="atividad" id="atividad" class="form-control" >
 					<option value="">Escolha o tipo de atividade</option>
-					<?php 
-						$categoria_post2 = "SELECT * FROM atividades";
-						$categoria_post2 = mysqli_query($conectando,$categoria_post2);
-						while($row_cat_post2 = mysqli_fetch_assoc($categoria_post2) ) 
-						{
-							$unidade = $row_cat_post2['unidade'];
-						}
-					?>
 				</select>
 			</div>
 
 			<label class="col-sm-1 control-label" for="curso">Unidade</label>
 				<div class="col-sm-3">
 					<span class="carregando">Aguarde, carregando...</span>
-					<input class="form-control" type="text" name="unidade" placeholder = "Unidade" value="<?php echo $unidade; ?>">
-						
+					<input class="form-control " type="text" name="unidade" placeholder="Unidade">
 				</div>
 		
 		</div>
@@ -110,13 +100,14 @@ $dados = mysqli_fetch_array($resultado);
 		</div>
 
 			<p> </p>
-			<!-- SALVANDO PDF -->
+
 		<div class="form-group">
 			<label class="col-sm-3 control-label" for="curso">Selecione seu arquivo</label>
-			<form method="post" enctype="multipart/form-data"></form>
 			<div class="col-sm-2 col-sm-offset-0">
-				<input name="arquivo" type="file" accept = "application/pdf">
-			</div>			
+				<input name="arquivo" type="file">
+			</div>	
+		</div>
+		<div class="form-group">
 			<div class="col-sm-7 col-sm-offset-3">
 				<button type="submit" value="enviar" class="btn btn-primary btn-block">SUBMETER ATIVIDADE</button>
 			</div>	

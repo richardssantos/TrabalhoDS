@@ -76,16 +76,16 @@ mysqli_close($conectando);
 		<div id="menu" class="navbar col-sm-10 col-sm-offset-1 negrito" >
 			<ul class="nav nav-pills nav-justified negrito">
 				<li class="nav-item ">
-					<a id="novos" class="nav-link active negrito" href="novos.php">Novos Cadastros</a>
+					<a id="novos" class="nav-link active negrito" href="_linksAdmin/novos.php">Novos Cadastros</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link negrito" href="todosAlunos.php">Alunos</a>
+					<a class="nav-link negrito" href="_linksAdmin/todosAlunos.php">Alunos</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link negrito" href="#">Novas Atividades</a>
+					<a class="nav-link negrito" href="_linksAdmin/novasAtividades.php">Novas Atividades</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link negrito" href="#">Buscar</a>
+					<a class="nav-link negrito" href="_linksAdmin/buscas.php">Buscar</a>
 				</li>
 			</ul>
 		</div>	

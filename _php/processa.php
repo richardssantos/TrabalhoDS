@@ -48,7 +48,6 @@ $matricula = filter_input(INPUT_POST, 'matricula', FILTER_SANITIZE_NUMBER_INT);
 			$resultado_usuario = "INSERT INTO aluno(matricula,nome, email, tel, senha,idCurso,idCurriculo,provavelFormatura) VALUES ('$matricula', '$nome','$email','$telefone','$senha',$curso,$curriculo,'$formatura')";
 
 			$resultado = mysqli_query($conectando,$resultado_usuario);
-			mkdir("../alunos/".$matricula);
 			if ($resultado){
 			echo "<script>
 			alert('Aluno cadastrado com sucesso!');

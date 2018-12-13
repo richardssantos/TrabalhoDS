@@ -68,8 +68,8 @@ session_start();
 					<div class="col-sm-3">	
 						<select class="form-control" name="curso">
 							<option>Escolha uma opção</option>
-							<option value="C">Ciência da Computação</option>
-							<option value="E">Engenharia da Computação</option>
+							<option value="1">Ciência da Computação</option>
+							<option value="2">Engenharia da Computação</option>
 						</select>
 					</div>				
 					<label class="col-sm-1 control-label" for="curriculo">Currículo</label>
