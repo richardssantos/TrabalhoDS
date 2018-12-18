@@ -1,3 +1,18 @@
+h4.sair {
+	margin-top: 10%;
+	margin-right: auto;
+	color: black;
+}
+
+#imagem {
+	float: none;
+	display: block;
+	margin: auto;
+}
+
+.sair1 {
+	color: black;
+}
 
 #menu {
 	background:#FFFFFF;;
@@ -19,10 +34,6 @@ ul {
 	color: #FFFFFF;
 }
 
-h1 {
-	background: red;
-}
-
 .negrito {
 	color: #FFFFFF;
 	text-transform: uppercase;
@@ -31,3 +42,17 @@ h1 {
 	font-size: 14px;
 }
 
+/* CSS Document */
+
+
+
+.nome {
+	margin-top: 10%;
+	margin-left: 15%;
+	text-align: center;
+}
+
+table {
+	margin-top: 1%;
+	text-align: center;
+}

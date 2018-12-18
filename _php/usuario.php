@@ -37,7 +37,7 @@ mysqli_close($conectando);
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link href="../_css/styleUsuario.css" rel="stylesheet">
 		<link href="../bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
-		
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 		
 		<title>Usuário</title>
 	</head>
@@ -64,11 +64,11 @@ mysqli_close($conectando);
 		
 		<hr>
 		
-		<div class="row">
-			<div class="atividade ">
-				<div class="col-sm-4 col-md-4 col-lg-4 col-sm-offset-4">
+		<div class="row ">
+			<div class="atividade col-sm-12 col-md-12 col-lg-12">
+				<div class="">
 					<a id="submete" href="atividade.php">
-						<button class="botao btn btn-primary btn-block sub ">SUBMETER NOVA ATIVIDADE</button>
+						<button type="button" class="botao btn btn-primary btn-lg col-sm-4 col-md-4 col-lg-4 col-sm-offset-4 font-weight-bold">SUBMETER NOVA ATIVIDADE</button>
 					</a>
 				</div>
 			</div>
@@ -77,55 +77,55 @@ mysqli_close($conectando);
 		<div class="row">	
 			<div class="meio col-sm-6 col-md-6 col-lg-6"> 
 				
-				<h2 class="text-center "> Horas Complementares</h2><hr class="linha">
-					<h4 class="text-center">Ensino</h4>
-					<div class="progress progresso1 col-sm-offset-3 ">
-						<div class=" progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:100%">
-						100% Completo
+				<h1 id="horas" class="text-center "> Horas Complementares</h1><hr class="linha">
+					<h3 class="text-center">Ensino</h3>
+					<div class="progress progresso1 col-sm-offset-3" style="height: 20px;">
+						<div class=" progress-bar bg-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:100%">
+						120 horas
 						</div>
 					</div>	
 						
 					
-					<h4 class="text-center">Extensão</h4>
-					<div class="progress progresso1 col-sm-offset-3 ">
-						<div class="progress-bar progress-bar-warning progress-bar-striped" role="progressbar"
+					<h3 class="text-center">Extensão</h3>
+					<div class="progress progresso1 col-sm-offset-3" style="height: 20px;">
+						<div class="progress-bar bg-success" role="progressbar"
 						aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width:60%">
-						60% Completo
+						60 horas
 						</div>
 					</div>	
 				
-					<h4 class="text-center">Pesquisa</h4>
-					<div class="progress progresso1 col-sm-offset-3 ">
-						<div class="progress-bar progress-bar-danger progress-bar-striped" role="progressbar"
+					<h3 class="text-center">Pesquisa</h3>
+					<div class="progress progresso1 col-sm-offset-3" style="height: 20px;">
+						<div class="progress-bar bg-success" role="progressbar"
 						aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width:5%">
-						5% Completo
+						5 horas
 						</div>
 					</div>	
 
 					
 			</div>
 			<div class="meio col-sm-6 col-md-6 col-lg-6"> 
-				<h2 class="text-center"> Horas Livres</h2><hr class="linha">
-					<h4 class="text-center">Horas Livres Aprovadas</h4>
-					<div class="progress progresso1 col-sm-offset-3 ">
-						<div class="progress-bar progress-bar-danger progress-bar-striped" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:10%">
-						10% Completo
+				<h1 class="text-center" id="horas"> Horas Livres</h1><hr class="linha">
+					<h3 class="text-center">Horas Livres Aprovadas</h3>
+					<div class="progress progresso1 col-sm-offset-3" style="height: 20px;" >
+						<div class="progress-bar bg-success"role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:10%">
+						5 horas
 						</div>
 					</div>
 				
-					<h4 class="text-center">Total de Horas Aprovadas</h4>
-					<div class="progress progresso1 col-sm-offset-3 ">
-						<div class="progress-bar progress-bar-info progress-bar-striped" role="progressbar"
+					<h3 class="text-center">Total de Horas Aprovadas</h3>
+					<div class="progress progresso1 col-sm-offset-3" style="height: 20px;">
+						<div class="progress-bar bg-success" role="progressbar"
 						aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width:50%">
 						50 horas aprovadas
 						</div>
 					</div>
 				
-					<h4 class="text-center">Horas em Analise</h4>
-					<div class="progress progresso1 col-sm-offset-3 ">
-						<div class="progress-bar progress-bar-warning progress-bar-striped" role="progressbar"
+					<h3 class="text-center">Horas em Analise</h3>
+					<div class="progress progresso1 col-sm-offset-3" style="height: 20px;">
+						<div class="progress-bar bg-success" role="progressbar"
 						aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width:100%">
-						36 horas para analisar
+						Horas
 						</div>
 					</div>	
 			</div>
@@ -133,31 +133,33 @@ mysqli_close($conectando);
 		
 		
 	</div>	
-		
-	<table class="col-sm-10 col-sm-offset-1 table-responsive" >
-		<thead class=" thead-dark ">
-			<th>Documento</th>
-			<th>Número de Horas</th>
-			<th>Estado Atual</th>
-		</thead>
-		<tbody>
+	
+	<div class="row">	
+		<table class="table col-sm-10 col-sm-offset-1 table-bordered table-hover tabela" >
+			<thead class=" thead-light ">
+				<th>Documento</th>
+				<th>Número de Horas</th>
+				<th>Estado Atual</th>
+			</thead>
+			<tbody>
 
-				<?php
-				while($dadostabela = mysqli_fetch_assoc($tabela)){
-					echo "<tr>";
-					echo "<td>".$dadostabela['nome_documento']."</td>";
-					echo "<td>".$dadostabela['valorEmHoras']."</td>";
-					if($dadostabela['estadoAtual'] == '1'){
-					echo "<td>Aprovado</td>";
-					
-					}else{
-						echo "<td>Em análise</td>";
+					<?php
+					while($dadostabela = mysqli_fetch_assoc($tabela)){
+						echo "<tr>";
+						echo "<td>".$dadostabela['nome_documento']."</td>";
+						echo "<td>".$dadostabela['valorEmHoras']."</td>";
+						if($dadostabela['estadoAtual'] == '1'){
+						echo "<td>Aprovado</td>";
+
+						}else{
+							echo "<td>Em análise</td>";
+						}
+						echo "<tr>";
 					}
-					echo "<tr>";
-				}
-			?>
-		</tbody>
-	</table>
+				?>
+			</tbody>
+		</table>
+	</div>
 			</div> <!-- FIM CONTAINER -->
 
 </body>

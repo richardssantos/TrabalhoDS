@@ -33,7 +33,6 @@ $dados = mysqli_fetch_array($resultado);
 		
 		
 		<link href="../../_css/styleIndex.css" rel="stylesheet">
-		<link href="../../_css/styleUsuario.css" rel="stylesheet">
 		<link href="../../_css/styleAdmin.css" rel="stylesheet">
 		<link href="../../bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
 		
@@ -96,7 +95,7 @@ $dados = mysqli_fetch_array($resultado);
 		?>
 		<!-- AQUI VAI O CABECALHO DA TABELA -->
 		<table class="table col-sm-10 col-sm-offset-1">
-			<thead class=" thead-dark ">
+			<thead class="thead-light">
 				<tr>
 					<th >Matricula</th>
 					<th >Nome</th>

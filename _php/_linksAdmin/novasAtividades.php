@@ -91,8 +91,8 @@ mysqli_close($conectando);
 			</div>
 			<h1></h1>
 		</div>	 <!-- FIM MENU -->
-		<table id = 'tabela'>
-		<thead>
+		<table class="table col-sm-10 col-sm-offset-1">
+		<thead class="thead-light">
 			<th>Matricula</th>
 			<th>Documento</th>
 			<th>Número de Horas</th>
