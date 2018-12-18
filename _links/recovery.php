@@ -31,7 +31,7 @@
 			<div class="col-sm-12"><h1></h1></div>
 		</div>
 		
-		<form method="post" action="_php/valida.php" class="form-horizontal">
+		<form method="post" action="../index.php" class="form-horizontal">
 			
 			<div class="form-group">
 				<label class="col-sm-4 control-label" for="email">E-mail</label>

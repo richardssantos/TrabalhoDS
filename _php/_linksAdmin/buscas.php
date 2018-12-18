@@ -57,7 +57,7 @@ mysqli_close($conectando);
 			</div>
 
 			<div class="cabecalho topo col-sm-4 col-md-4 col-lg-4"> 
-				<h4 class="text-center sair"><a class="sair1" href="../_buscas/logout.php">Sair</a></h4>
+				<h4 class="text-center sair"><a class="sair1" href="../../index.php">Sair</a></h4>
 			</div>
 		</div>
 		<hr>
