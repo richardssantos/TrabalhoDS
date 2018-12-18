@@ -15,7 +15,16 @@ $id = $_SESSION['id_usuario'];
 $sql = "SELECT * FROM aluno WHERE matricula = '$id' ";
 $resultado = mysqli_query($conectando,$sql);
 $dados = mysqli_fetch_array($resultado);
+
+
+
+$sqltabela = "SELECT * FROM registro_atividade WHERE matricula = '$id' ";
+$tabela = mysqli_query($conectando,$sqltabela);
+$total = mysqli_num_rows($tabela);
+
+
 mysqli_close($conectando);
+
 
 ?>
 
@@ -28,6 +37,8 @@ mysqli_close($conectando);
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link href="../_css/styleUsuario.css" rel="stylesheet">
 		<link href="../bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+		
+		
 		<title>Usuário</title>
 	</head>
 
@@ -119,14 +130,35 @@ mysqli_close($conectando);
 					</div>	
 			</div>
 			
-			<div class="row">
-				<div class="tabela">
-				
-				</div>
-			</div>
+		
 		
 	</div>	
-	
+		
+	<table class="col-sm-10 col-sm-offset-1 table-responsive" >
+		<thead class=" thead-dark ">
+			<th>Documento</th>
+			<th>Número de Horas</th>
+			<th>Estado Atual</th>
+		</thead>
+		<tbody>
+
+				<?php
+				while($dadostabela = mysqli_fetch_assoc($tabela)){
+					echo "<tr>";
+					echo "<td>".$dadostabela['nome_documento']."</td>";
+					echo "<td>".$dadostabela['valorEmHoras']."</td>";
+					if($dadostabela['estadoAtual'] == '1'){
+					echo "<td>Aprovado</td>";
+					
+					}else{
+						echo "<td>Em análise</td>";
+					}
+					echo "<tr>";
+				}
+			?>
+		</tbody>
+	</table>
+			</div> <!-- FIM CONTAINER -->
 
 </body>
 </html>

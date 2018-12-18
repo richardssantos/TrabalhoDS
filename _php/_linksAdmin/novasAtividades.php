@@ -6,15 +6,20 @@ session_start();
 
 //Verificando conexão 
 if(!isset($_SESSION['logado'])):
-	header('Location: ../../index.php');
+	header('Location: ../../../index.php');
 endif;
-
 
 //Dados
 $id = $_SESSION['id_usuario'];
 $sql = "SELECT * FROM administrador WHERE siape = '$id' ";
 $resultado = mysqli_query($conectando,$sql);
 $dados = mysqli_fetch_array($resultado);
+
+$sqltabela = "SELECT * FROM registro_atividade WHERE estadoAtual = '0' ";
+$tabela = mysqli_query($conectando,$sqltabela);
+$total = mysqli_num_rows($tabela);
+
+
 mysqli_close($conectando);
 
 ?>
@@ -84,9 +89,27 @@ mysqli_close($conectando);
 			<div class="row">
 				<div class="col-sm-12"><h1></h1></div>
 			</div>
-			<h1> ESTOU AQUI</h1>
+			<h1></h1>
 		</div>	 <!-- FIM MENU -->
-		
+		<table id = 'tabela'>
+		<thead>
+			<th>Matricula</th>
+			<th>Documento</th>
+			<th>Número de Horas</th>
+		</thead>
+		<tbody>
+
+				<?php
+				while($dadostabela = mysqli_fetch_assoc($tabela)){
+					echo "<tr>";
+					echo "<td>".$dadostabela['matricula']."</td>";
+					echo "<td>".$dadostabela['nome_documento']."</td>";
+					echo "<td>".$dadostabela['valorEmHoras']."</td>";
+					echo "<tr>";
+				}
+			?>
+		</tbody>
+		</table>
 	</div> <!-- FIM CONTAINER -->
 	
 </body>

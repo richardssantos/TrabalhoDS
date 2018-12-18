@@ -1,15 +1,9 @@
-
 <?php
 include_once "conect.php";
 
-$id = $_SESSION['id_usuario'];
-$sql = "SELECT * FROM aluno WHERE matricula = '$id' ";
-$resultado = mysqli_query($conectando,$sql);
-$dados = mysqli_fetch_array($resultado);
-mysqli_close($conectando);
-
 //Consulta ao banco dados na tabela aluno
-$busca_aluno = "SELECT * FROM arquivo where ";
+
+$busca_aluno = "SELECT * FROM aluno";
 $resultado_busca = mysqli_query($conectando, $busca_aluno);
 ?>
 

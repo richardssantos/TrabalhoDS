@@ -1,6 +1,7 @@
 <?php
 /*Conexão*/
 require_once('conect.php');
+
 //Sessão
 session_start();
 
@@ -44,12 +45,12 @@ $dados = mysqli_fetch_array($resultado);
 			</div>
 		</div><hr class="linha">
 		
-	<form method="post" action="processsaUpload.php" class="form-horizontal" enctype="multipart/form-data">
+	<form method="post" action="processaUpload.php" class="form-horizontal" enctype="multipart/form-data">
 
 		<div class="form-group">
 			<label class="col-sm-3 control-label" for="curso">Tipo de Atividade</label>
 				<div class="col-sm-7">	
-				<select name="classeDefault" id="classeDefault" class="form-control" >
+				<select name="classeDefault" id="classeDefault" class="form-control" required/>
 					<option value="">Escolha uma opção</option>
 					<?php 
 						$categoria_post = "SELECT * FROM categoriaatividade ORDER BY classe";
@@ -57,6 +58,7 @@ $dados = mysqli_fetch_array($resultado);
 						while($row_cat_post = mysqli_fetch_assoc($categoria_post) ) 
 						{
 							echo utf8_encode('<option value="'.$row_cat_post['idCategoria'].'">'.$row_cat_post['classe'].'</option>');
+							//$idAtividade = 
 						}
 					?>
 				</select>
@@ -68,7 +70,7 @@ $dados = mysqli_fetch_array($resultado);
 			<label class="col-sm-3 control-label" for="curso">Atividade</label>
 			<div class="col-sm-3">
 				<span class="carregando">Aguarde, carregando...</span>
-				<select name="atividad" id="atividad" class="form-control" >
+				<select name="atividad" id="atividad" class="form-control" required/>
 					<option value="">Escolha o tipo de atividade</option>
 				</select>
 			</div>
@@ -76,7 +78,7 @@ $dados = mysqli_fetch_array($resultado);
 			<label class="col-sm-1 control-label" for="curso">Unidade</label>
 				<div class="col-sm-3">
 					<span class="carregando">Aguarde, carregando...</span>
-					<input class="form-control " type="text" name="unidade" placeholder="Unidade">
+					<input class="form-control " type="text" name="unidade" placeholder="Unidade" required/>
 				</div>
 		
 		</div>
@@ -95,7 +97,7 @@ $dados = mysqli_fetch_array($resultado);
 		<div class="form-group">
 				<label class="col-sm-3 control-label" for="curso">Quantidade de Horas</label>
 				<div class="col-sm-7">
-					<input class="form-control " type="text" name="default" placeholder="Quantidade de horas">
+					<input class="form-control " type="text" name="horasAtividade" placeholder="Quantidade de horas" required/>
 				</div>
 		</div>
 
