@@ -17,6 +17,8 @@ $sql = "SELECT * FROM aluno WHERE matricula = '$id' ";
 $resultado = mysqli_query($conectando,$sql);
 $dados = mysqli_fetch_array($resultado);
 
+
+
 ?>
 
 
@@ -58,7 +60,7 @@ $dados = mysqli_fetch_array($resultado);
 						while($row_cat_post = mysqli_fetch_assoc($categoria_post) ) 
 						{
 							echo utf8_encode('<option value="'.$row_cat_post['idCategoria'].'">'.$row_cat_post['classe'].'</option>');
-							//$idAtividade = 
+						$idAtividade =intval($row_cat_post['idCategoria']);
 						}
 					?>
 				</select>

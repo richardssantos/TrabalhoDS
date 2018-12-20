@@ -1,13 +1,15 @@
 <?php
-session_start();
+//session_start();
 include_once("../conect.php");
+include_once("../_linksAdmin/novos.php");
 
-$matricula = filter_input(INPUT_POST, 'matricula', FILTER_SANITIZE_NUMBER_INT);
-$registro = filter_input(INPUT_POST, 'registroAceito', FILTER_SANITIZE_STRING);
-
-$result_usuario = "UPDATE aluno SET registroAceito=1";
+$result_usuario = "UPDATE aluno SET registroAceito=1 where matricula = $matricula";
 $resultado_usuario = mysqli_query($conectando, $result_usuario);
-
+echo "<script>
+			alert('$matricula');
+			 
+			</script>
+			";
 if ($resultado_usuario){
 	echo "<script> 
 	alert('Aluno cadastrado com sucesso!'); 
@@ -19,4 +21,3 @@ if ($resultado_usuario){
 	window.location.href ='../_linksAdmin/novos.php';
 	</script>";
 }
-

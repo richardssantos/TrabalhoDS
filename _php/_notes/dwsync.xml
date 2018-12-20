@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <dwsync>
-<file name="admin.php" server="C:/xampp/htdocs/TrabalhoDS/" local="131891225671618866" remote="131891225670000000" Dst="2" />
-<file name="atividade.php" server="C:/xampp/htdocs/TrabalhoDS/" local="131894604276793646" remote="131894604270000000" Dst="2" />
+<file name="admin.php" server="C:/xampp/htdocs/TrabalhoDS/" local="131897359083497394" remote="131897359080000000" Dst="2" />
+<file name="atividade.php" server="C:/xampp/htdocs/TrabalhoDS/" local="131897394338718460" remote="131897394330000000" Dst="2" />
 <file name="conect.php" server="C:/xampp/htdocs/TrabalhoDS/" local="131891959960000000" remote="131891959960000000" Dst="2" />
-<file name="logout.php" server="C:/xampp/htdocs/TrabalhoDS/" local="131891200154740395" remote="131891200150000000" Dst="2" />
-<file name="processa.php" server="C:/xampp/htdocs/TrabalhoDS/" local="131891200154896649" remote="131891200150000000" Dst="2" />
-<file name="sub_atividade.php" server="C:/xampp/htdocs/TrabalhoDS/" local="131891200154896649" remote="131891200150000000" Dst="2" />
-<file name="usuario.php" server="C:/xampp/htdocs/TrabalhoDS/" local="131891200154896649" remote="131891200150000000" Dst="2" />
-<file name="valida.php" server="C:/xampp/htdocs/TrabalhoDS/" local="131891200154896649" remote="131891200150000000" Dst="2" />
+<file name="logout.php" server="C:/xampp/htdocs/TrabalhoDS/" local="131891959960000000" remote="131891959960000000" Dst="2" />
+<file name="processa.php" server="C:/xampp/htdocs/TrabalhoDS/" local="131896388943109775" remote="131896388940000000" Dst="2" />
+<file name="sub_atividade.php" server="C:/xampp/htdocs/TrabalhoDS/" local="131891959960000000" remote="131891959960000000" Dst="2" />
+<file name="usuario.php" server="C:/xampp/htdocs/TrabalhoDS/" local="131897373935118695" remote="131897373930000000" Dst="2" />
+<file name="valida.php" server="C:/xampp/htdocs/TrabalhoDS/" local="131891959960000000" remote="131891959960000000" Dst="2" />
 <file name="admin.php" server="D:/xampp/htdocs/xampp/DS/" local="131891959960000000" remote="131891959960000000" Dst="2" />
 <file name="atividade.php" server="D:/xampp/htdocs/xampp/DS/" local="131891959960000000" remote="131891959960000000" Dst="2" />
 <file name="processaUpload.php" server="D:/xampp/htdocs/xampp/DS/" local="131893939175219673" remote="131893939170000000" Dst="2" />
@@ -18,5 +18,10 @@
 <file name="listaAtividadesAluno.php" server="D:/xampp/htdocs/xampp/DS/" local="131893907973775215" remote="131893907970000000" Dst="2" />
 <file name="sub_atividade.php" server="D:/xampp/htdocs/xampp/DS/" local="131891959960000000" remote="131891959960000000" Dst="2" />
 <file name="conect.php" server="D:/xampp/htdocs/xampp/DS/" local="131891959960000000" remote="131891959960000000" Dst="2" />
-<file name="processaUpload.php" server="C:/xampp/htdocs/TrabalhoDS/" local="131894627025194780" remote="131894627020000000" Dst="2" />
+<file name="processaUpload.php" server="C:/xampp/htdocs/TrabalhoDS/" local="131897244843788181" remote="131897244840000000" Dst="2" />
+<file name="listaAlunos.php" server="C:/xampp/htdocs/TrabalhoDS/" local="131896388943109775" remote="131896388940000000" Dst="2" />
+<file name="listaAtividadesAluno.php" server="C:/xampp/htdocs/TrabalhoDS/" local="131896388943109775" remote="131896388940000000" Dst="2" />
+<file name="novoAluno.php" server="C:/xampp/htdocs/TrabalhoDS/" local="131897396685249307" remote="131897396680000000" Dst="2" />
+<file name="novos.php" server="C:/xampp/htdocs/TrabalhoDS/" local="131897383878209782" remote="131897383870000000" Dst="2" />
+<file name="todosAlunos.php" server="C:/xampp/htdocs/TrabalhoDS/" local="131891959960000000" remote="131891959960000000" Dst="2" />
 </dwsync>

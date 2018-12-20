@@ -73,7 +73,7 @@ mysqli_close($conectando);
 		<!-- MENU -->
 		<!-- MENU FUNCIONANDO TEM QUE AJUSTAR OS LINKS-->
 		
-		<div id="menu" class="navbar col-sm-10 col-sm-offset-1 negrito" >
+		<div id="menu" class="navbar" >
 			<ul class="nav nav-pills nav-justified negrito">
 				<li class="nav-item ">
 					<a id="novos" class="nav-link active negrito" href="_linksAdmin/novos.php">Novos Cadastros</a>

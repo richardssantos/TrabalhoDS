@@ -94,14 +94,17 @@ $dados = mysqli_fetch_array($resultado);
 		if (($busca_resultado) AND ($busca_resultado->num_rows != 0))  {
 		?>
 		<!-- AQUI VAI O CABECALHO DA TABELA -->
-		<table class="table col-sm-10 col-sm-offset-1">
+		<table class="table col-sm-10 col-sm-offset-1 table-bordered table-hover">
 			<thead class="thead-light">
 				<tr>
 					<th >Matricula</th>
 					<th >Nome</th>
 					<th >E-mail</th>
-					<th >Registro Não Aceito</th>
-					<th> Editar </th>
+					<th >Telefone</th>
+					<th >Senha</th>
+					<th>Formatura</th>
+					<th>Curso</th>
+					<th>Editar</th>
 				</tr>
 			</thead>
 		<tbody>
@@ -118,8 +121,19 @@ $dados = mysqli_fetch_array($resultado);
 						<th><?php echo $linha['matricula'];?> </th>
 						<th><?php echo $linha['nome'];?> </th>
 						<th><?php echo $linha['email'];?> </th>
-						<th><?php echo $linha['registroAceito'];?> </th>
-						<th><input type="submit" value="Editar"></th>
+						<th><?php echo $linha['tel'];?> </th>
+						<th><?php echo $linha['senha'];?> </th>
+						<th><?php echo $linha['provavelFormatura'];?> </th>
+						<th><?php if ($linha['idCurso'] == '1')
+									{
+										echo "Ciência da Computação";
+									} else {
+										echo "Engenharia da Computação";
+									}
+									
+							
+							?> </th>
+						<th><input class="btn-success" type="submit" value="Editar"></th>
 					</form>
 				</tr>
 

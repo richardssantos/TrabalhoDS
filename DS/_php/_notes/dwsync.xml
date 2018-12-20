@@ -4,4 +4,17 @@
 <file name="conect.php" server="D:/xampp/htdocs/xampp/DS/" local="131887796340000000" remote="131887796340000000" Dst="2" />
 <file name="processa.php" server="D:/xampp/htdocs/xampp/DS/" local="131887796340000000" remote="131887796340000000" Dst="2" />
 <file name="processaUpload.php" server="D:/xampp/htdocs/xampp/DS/" local="131890541504499730" remote="131890541500000000" Dst="2" />
+<file name="admin.php" server="C:/xampp/htdocs/TrabalhoDS/" local="131896368595981656" remote="131896368590000000" Dst="2" />
+<file name="atividade.php" server="C:/xampp/htdocs/TrabalhoDS/" local="131896368595981656" remote="131896368590000000" Dst="2" />
+<file name="conect.php" server="C:/xampp/htdocs/TrabalhoDS/" local="131896368595981656" remote="131896368590000000" Dst="2" />
+<file name="listaAlunos.php" server="C:/xampp/htdocs/TrabalhoDS/" local="131896368596137886" remote="131896368590000000" Dst="2" />
+<file name="logout.php" server="C:/xampp/htdocs/TrabalhoDS/" local="131896368596137886" remote="131896368590000000" Dst="2" />
+<file name="novoAluno.php" server="C:/xampp/htdocs/TrabalhoDS/" local="131896368596137886" remote="131896368590000000" Dst="2" />
+<file name="novos.php" server="C:/xampp/htdocs/TrabalhoDS/" local="131896368596137886" remote="131896368590000000" Dst="2" />
+<file name="processa.php" server="C:/xampp/htdocs/TrabalhoDS/" local="131896368596137886" remote="131896368590000000" Dst="2" />
+<file name="processaUpload.php" server="C:/xampp/htdocs/TrabalhoDS/" local="131896368596137886" remote="131896368590000000" Dst="2" />
+<file name="sub_atividade.php" server="C:/xampp/htdocs/TrabalhoDS/" local="131896368596137886" remote="131896368590000000" Dst="2" />
+<file name="todosAlunos.php" server="C:/xampp/htdocs/TrabalhoDS/" local="131896368596137886" remote="131896368590000000" Dst="2" />
+<file name="usuario.php" server="C:/xampp/htdocs/TrabalhoDS/" local="131896368596137886" remote="131896368590000000" Dst="2" />
+<file name="valida.php" server="C:/xampp/htdocs/TrabalhoDS/" local="131896368596137886" remote="131896368590000000" Dst="2" />
 </dwsync>

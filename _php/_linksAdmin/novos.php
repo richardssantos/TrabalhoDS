@@ -84,60 +84,16 @@ $dados = mysqli_fetch_array($resultado);
 
 			</ul>		
 		</div>	 <!-- FIM MENU -->
-	
-		<?php
-			$busca_aluno = "SELECT * FROM aluno";
-			$busca_resultado = mysqli_query($conectando, $busca_aluno);
-		
-			$semcadastro = 0;
-			while($registro = mysqli_fetch_assoc($busca_resultado)){
-				if ($registro['registroAceito'] == 0){
-					$semcadastro = $semcadastro + 1;
-				}
-			}
-		
-		//Verifica se encontrou alguuma coisa na tabela aluno
-		if ( $semcadastro != 0)  {
-		?>
-		<!-- AQUI VAI O CABECALHO DA TABELA -->
-		<table class="table col-sm-10 col-sm-offset-1">
-			<thead class=" thead-light ">
-				<tr>
-					<th >Matricula</th>
-					<th >Nome</th>
-					<th >E-mail</th>
-					<th >Registro Não Aceito</th>
-					<th> Editar </th>
-				</tr>
-			</thead>
-		<tbody>
-		
-		<?php
-			$busca_aluno = "SELECT * FROM aluno";
-			$busca_resultado = mysqli_query($conectando, $busca_aluno);
-			while($linha = mysqli_fetch_assoc($busca_resultado)){
-				if ( $linha['registroAceito'] == '0' ) {
-		?>
-				<tr>
-					<form method="POST" action="../_edit/aceitaAluno.php">
-						<input type="hidden" name="matricula" value="<?php $linha['matricula']; ?>">
-						<th><?php echo $linha['matricula'];?> </th>
-						<th><?php echo $linha['nome'];?> </th>
-						<th><?php echo $linha['email'];?> </th>
-						<th><?php echo $linha['registroAceito'];?> </th>
-						<th><input type="submit" value="Aceitar"></th>
-					</form>
-				</tr>
 
-				<?php
-				}
-			}
-		} else {
-			echo "<div class='alert alert-danger col-sm-10 col-sm-offset-1 negrito' align='center' role='alert'>Nenhum usuário encontrado!</div>";
-		}
-		?>
-		</tbody>	
-		</table>
+		<span id="conteudo" class="col-sm-10 col-sm-offset-1"></span>
+			<script>
+				$(document).ready(function () {
+					$.post('novoAluno.php', function(retorna){
+					//Subtitui o valor no seletor id="conteudo"
+					$("#conteudo").html(retorna);
+				});
+			});
+		</script>
 		</div> <!-- FIM CONTAINER -->
 	
 </body>

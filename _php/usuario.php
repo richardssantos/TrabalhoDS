@@ -139,24 +139,57 @@ mysqli_close($conectando);
 			<thead class=" thead-light ">
 				<th>Documento</th>
 				<th>Número de Horas</th>
+				<th>Atividade</th>
 				<th>Estado Atual</th>
+				<th>Download</th>
 			</thead>
 			<tbody>
 
 					<?php
 					while($dadostabela = mysqli_fetch_assoc($tabela)){
-						echo "<tr>";
-						echo "<td>".$dadostabela['nome_documento']."</td>";
-						echo "<td>".$dadostabela['valorEmHoras']."</td>";
-						if($dadostabela['estadoAtual'] == '1'){
-						echo "<td>Aprovado</td>";
+						$mat = $dadostabela['matricula'];
+						$ndoc = $dadostabela['nome_documento'];
+						$caminho = "../alunos/".$mat."/".$ndoc."";
+						?>
+						<tr>
+						<td><?php echo $dadostabela['nome_documento'];?></td>
+						<td><?php echo $dadostabela['valorEmHoras'];?></td>
+						<td>
+						<?php
+						if($dadostabela['idAtividade'] == '1'){
+							echo "Ensino";
 
-						}else{
-							echo "<td>Em análise</td>";
+						}else
+						if($dadostabela['idAtividade'] == '2'){
+							echo "pesquisa";
 						}
-						echo "<tr>";
+						else
+						if($dadostabela['idAtividade'] == '3'){
+							echo "Extensão";
+						}
+						?>
+						</td>
+						<td>
+						<?php
+						if($dadostabela['estadoAtual'] == '2'){
+							echo "Aprovado";
+
+						}else
+						if($dadostabela['estadoAtual'] == '1'){
+							echo "Em análise";
+						}else
+						if($dadostabela['estadoAtual'] == '0'){
+							echo "Reprovado";
+						}
+
+						?>
+							</td>
+						<td class = "text-center"><a href= <?php echo $caminho ?>  class = "btn btn-primary" download>Download</a>
+						</td>;
+				<?php
 					}
 				?>
+
 			</tbody>
 		</table>
 	</div>

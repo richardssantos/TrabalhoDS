@@ -19,37 +19,44 @@ session_start();
 			$sql = " SELECT * FROM aluno WHERE matricula = '$matricula'";
 			$resultado = mysqli_query($conectando,$sql);
 			$dados = mysqli_fetch_array($resultado);
-			
+	
 			if ($dados['nivel'] == 1): //nivel aluno
-				echo "O nivel é ".$dados['nivel'];
-				
+					echo "O nivel é ".$dados['nivel'];
 				if(mysqli_num_rows($resultado) > 0):
 					/*Verificando se a senha existe*/
 					//$senha = md5($senha);
 					$sql = "SELECT * FROM aluno WHERE matricula = '$matricula' AND senha = '$senha'";
 					$resultado = mysqli_query($conectando,$sql);
-		
-					if(mysqli_num_rows($resultado) == 1):
+					
+						if(mysqli_num_rows($resultado) == 1):
 						/*AQUI ACONTECE A MÁGICA*/
-						$dados = mysqli_fetch_array($resultado);
-						mysqli_close($conectando);
-						$_SESSION['logado'] = true;
-						$_SESSION['id_usuario'] = $dados['matricula'];
-						header('Location: _php/usuario.php');
-					else:
-						$erros[] = "<h4 class='text-center text-danger'>Usuário e Senha não conferem</h4>";
-					endif;
+							$dados = mysqli_fetch_array($resultado);
+							mysqli_close($conectando);
+							$_SESSION['logado'] = true;
+							$_SESSION['id_usuario'] = $dados['matricula'];
+							if($dados['registroAceito'] == 1):		header('Location: 						_php/usuario.php');
+							else:
+								echo "<script>
+									alert('Usuario ainda não foi aceito pelo administrador');
+									window.location.href ='index.php';
+									</script>";
+							endif;
+							
+						else:
+							$erros[] = "<h4 class='text-center text-danger'>Usuário e Senha não conferem</h4>";
+						endif;
+					
+
 				else:
 					$erros[] = "<h4 class='text-center text-danger'>Usuário inexistente</h4>";
-				endif;	
-		
+				endif;
+
 			else:
 				//Faz a leitura da tabela Administrador
 				$sql = " SELECT * FROM administrador WHERE siape = '$matricula'";
 				$resultado = mysqli_query($conectando,$sql);
 				$dados = mysqli_fetch_array($resultado);
 				if ($dados['nivel'] == 2):
-					echo "O nivel é ".$dados['nivel'];
 					if(mysqli_num_rows($resultado) > 0):
 					/*Verificando se a senha existe*/
 					//$senha = md5($senha);

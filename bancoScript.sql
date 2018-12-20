@@ -118,17 +118,12 @@ CREATE TABLE `atividades` (
 
 CREATE TABLE registro_atividade (
 	idSubmissao			int	auto_increment 	not null, 
-	-- atividade			varchar(50)	not null,
+    idAtividade			int(1) not null,
     nome_documento		varchar(50) not null,
-	estadoAtual			int	not null default 0,
-	-- administrador		varchar(15)	not null,
+	estadoAtual			int	not null default 1,
 	valorEmHoras		int(3)		not null,
-	-- id		int(11)	not null, 
-	matricula			int(10)	not null, 
-	-- Siape				int(15)	not null, 
+	matricula			int(10)	not null,  
 	PRIMARY KEY (idSubmissao),
-	-- FOREIGN KEY (`id`) REFERENCES `atividades` (`id`),
-	-- FOREIGN KEY (Siape) REFERENCES administrador (Siape),
     FOREIGN KEY (matricula) REFERENCES aluno (matricula)
 	
 );

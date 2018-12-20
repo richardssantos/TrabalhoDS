@@ -15,7 +15,7 @@ $sql = "SELECT * FROM administrador WHERE siape = '$id' ";
 $resultado = mysqli_query($conectando,$sql);
 $dados = mysqli_fetch_array($resultado);
 
-$sqltabela = "SELECT * FROM registro_atividade WHERE estadoAtual = '0' ";
+$sqltabela = "SELECT * FROM registro_atividade WHERE estadoAtual = '1' ";
 $tabela = mysqli_query($conectando,$sqltabela);
 $total = mysqli_num_rows($tabela);
 
@@ -91,23 +91,50 @@ mysqli_close($conectando);
 			</div>
 			<h1></h1>
 		</div>	 <!-- FIM MENU -->
-		<table class="table col-sm-10 col-sm-offset-1">
-		<thead class="thead-light">
-			<th>Matricula</th>
-			<th>Documento</th>
-			<th>Número de Horas</th>
-		</thead>
-		<tbody>
+		<table class="table col-sm-10 col-sm-offset-1 table-hover table-bordered">
+			<thead class="thead-light">
+				<th>Matricula</th>
+				<th>Documento</th>
+				<th>Categoria</th>
+				<th>Horas</th>
+				<th>Aceitar</th>
+				<th>Recusar</th>
+				<th>Editar</th>
+				<th>Download</th>
+			</thead>
+			<tbody>
 
-				<?php
+			<?php
 				while($dadostabela = mysqli_fetch_assoc($tabela)){
-					echo "<tr>";
-					echo "<td>".$dadostabela['matricula']."</td>";
-					echo "<td>".$dadostabela['nome_documento']."</td>";
-					echo "<td>".$dadostabela['valorEmHoras']."</td>";
-					echo "<tr>";
-				}
+					$mat = $dadostabela['matricula'];
+					$ndoc = $dadostabela['nome_documento'];
+					$caminho = "../../alunos/".$mat."/".$ndoc."";
 			?>
+				
+				<tr>
+				<td><?php echo $dadostabela['matricula']?></td>
+ 				<td><?php echo  $dadostabela['nome_documento'] ?></td>
+				<td><?php
+					if($dadostabela['idAtividade'] == '1'){
+							echo "Ensino";
+
+						}else
+						if($dadostabela['idAtividade'] == '2'){
+							echo "pesquisa";
+						}
+						else
+						if($dadostabela['idAtividade'] == '3'){
+							echo "Extensão";
+						}?></td>
+				<td><?php echo $dadostabela['valorEmHoras']?></td>	
+				<td><input class="btn btn-success" type="submit" value="Aceitar"></td>
+				<td><input class="btn btn-danger" type="submit" value="Recusar"></td>
+				<td><input class="btn btn-secondary" type="submit" value="Editar"></td>
+				<td class = "text-center"><a href= <?php echo $caminho ?>  class = "btn btn-primary" download>Download</a>
+					</td>;
+		<?php												 
+				}
+		?>
 		</tbody>
 		</table>
 	</div> <!-- FIM CONTAINER -->

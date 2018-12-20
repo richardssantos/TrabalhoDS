@@ -9,6 +9,7 @@ include('atividade.php');
 //inserindo pdf
 	$id = intval($id);
 	$horas = intval($_POST['horasAtividade']);
+	$idAtividade = intval($_POST['classeDefault']);
 	echo "<script>
 			alert('$id');
 			</script>";
@@ -19,9 +20,7 @@ include('atividade.php');
 	$extension_name=end($temp_name);
 	$upload_file_name = $_FILES['arquivo']['name'];
 	
-	$temp_type = explode(".",$_FILES['arquivo']['type']);
-	$upload_file_type = $_FILES['arquivo']['type'];
-	$extension_type=end($temp_type);
+	
 	
 	if (empty($_FILES['arquivo']['name'])) {
     	echo "<script>
@@ -31,7 +30,8 @@ include('atividade.php');
 	}
 	else{
 	if(move_uploaded_file($_FILES['arquivo']['tmp_name'],"$pasta".$_FILES['arquivo']['name'])){
-	$query = mysqli_query($conectando,"insert into registro_atividade(nome_documento,valorEmHoras,matricula) values('".$upload_file_name."','".$horas."','".$id."')");
+	$query = mysqli_query($conectando,"insert into registro_atividade(nome_documento,valorEmHoras,matricula,idAtividade) values('".$upload_file_name."','".$horas."','".$id."'
+	,'".$idAtividade."')");
 		echo "<script>
 			alert('PDF enviado com sucesso');
 			window.location.href ='usuario.php'; 
