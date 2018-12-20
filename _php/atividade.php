@@ -28,24 +28,30 @@ $dados = mysqli_fetch_array($resultado);
 	<meta charset="utf8">
 	<link href="../_css/styleAtividades.css" rel="stylesheet">
 	<link href="../bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+	<link href="../_css/styleAdmin.css" rel="stylesheet">
+	
 	<title>Registro de Atividades</title>
 </head>
 	
 <body>
 	<div class="container-fluid">
 		<div class="row">
-		
-			<div class="cabecalho topo col-sm-6 col-md-6 col-lg-6"> 
+			<div class="cabecalho topo col-sm-4 col-md-4 col-lg-4"> 
 				<h4 class="nome"> Olá <?php echo $dados['nome']; ?> </h4>
 			</div>
 			
-			<div class="cabecalho topo col-sm-6 col-md-6 col-lg-6"> 
-				<img  id="imagem" src="../_images/juntos.png"
-			 		title="Ciência da Computação e Engenharia da Computação"
-			 		alt="Ciência da Computação e Engenharia da Computação"
-					class="img-responsive">
+			<div class="cabecalho topo col-sm-4 col-md-4 col-lg-4"> 
+					<img  id="imagem" src="../_images/juntos.png"
+						title="Ciência da Computação e Engenharia da Computação"
+						alt="Ciência da Computação e Engenharia da Computação"
+						class="img-responsive">
 			</div>
-		</div><hr class="linha">
+
+			<div class="cabecalho topo col-sm-4 col-md-4 col-lg-4"> 
+				<h4 class="text-center sair"><a class="sair1" href="usuario.php">Voltar</a></h4>
+			</div>
+		</div>
+		<hr>
 		
 	<form method="post" action="processaUpload.php" class="form-horizontal" enctype="multipart/form-data">
 
